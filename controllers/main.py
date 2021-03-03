@@ -51,6 +51,8 @@ class ReportController(controllers.main.ReportController):
                         error_name=odoo_error.name,
                         error_value=odoo_error.value,
                     ))
+            if not report_name or report_name == '':
+                report_name = 'default_name'
             xlsxhttpheaders = [
                 ('Content-Type', 'application/vnd.openxmlformats-'
                                  'officedocument.spreadsheetml.sheet'),
